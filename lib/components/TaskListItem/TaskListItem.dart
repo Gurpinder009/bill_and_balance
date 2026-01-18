@@ -1,9 +1,12 @@
+import 'package:bill_and_balance/models/TaskModel.dart';
 import 'package:flutter/material.dart';
 
+
+
+
 class TaskListItem extends StatelessWidget {
-
-  const TaskListItem({super.key});
-
+  final TaskModel task;
+  const TaskListItem({super.key, required this.task});
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -23,11 +26,11 @@ class TaskListItem extends StatelessWidget {
                 borderRadius: BorderRadius.circular(5),
               ),
               padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-              child: Text("group", style: TextStyle(fontSize: 10),),
+              child: Text(task.group, style: TextStyle(fontSize: 10),),
             ),
-            Text("Complete Project Proposal", style: TextStyle(fontSize: 20)),
+            Text(task.title, style: TextStyle(fontSize: 20)),
             SizedBox(height: 5),
-            Text("This is the description", style:TextStyle(color: Colors.black54)),
+            Text(task.desc, style:TextStyle(color: Colors.black54)),
             SizedBox(height: 5),
 
             Row(
@@ -36,7 +39,7 @@ class TaskListItem extends StatelessWidget {
                   children: [
                     Icon(Icons.timelapse, color: Colors.blueAccent),
                     SizedBox(width: 2,),
-                    Text("8H", style: TextStyle(color: Colors.blueAccent)),
+                    Text(task.timeRequired, style: TextStyle(color: Colors.blueAccent)),
                   ],
                 ),
                 SizedBox(width: 8),
@@ -46,12 +49,15 @@ class TaskListItem extends StatelessWidget {
                     Icon(Icons.warning_amber, color: Colors.red),
                     SizedBox(width: 2,),
 
-                    Text("2 days left", style: TextStyle(color: Colors.red)),
+                    Text("${task.timeLeft} days left", style: TextStyle(color: Colors.red)),
                   ],
                 ),
               ],
             ),
             SizedBox(height: 5),
+
+
+
             Row(
               children: [
                 Expanded(

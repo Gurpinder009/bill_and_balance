@@ -1,8 +1,7 @@
 import "package:flutter/material.dart";
 
-import "../../components/custom_app_bar/custom_app_bar.dart";
-import "../../components/custom_bottom_navigation_bar/custom_bottom_navigation_bar.dart";
-import "../settings_page/settings_page.dart";
+import 'package:bill_and_balance/components/custom_app_bar/custom_app_bar.dart';
+import 'package:bill_and_balance/components/custom_bottom_navigation_bar/custom_bottom_navigation_bar.dart';
 
 class AnalysisPage extends StatelessWidget {
   const AnalysisPage({super.key});
